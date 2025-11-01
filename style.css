@@ -1,0 +1,628 @@
+/* Γενικές Ρυθμίσεις */
+html, body {
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll; /* Μόνιμος χώρος */
+}
+
+/* Κρύβουμε το scrollbar */
+html::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #A67B5B;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, .navbar-brand, .hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  color: #A67B5B;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Κεντρικό περιεχόμενο με fade */
+.page-content {
+  flex: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding-top: 7rem; /* για να μην καλύπτεται από navbar */
+  text-align: left;  /* Όλο το περιεχόμενο αριστερά */
+}
+
+.page-content.visible {
+  opacity: 1;
+}
+
+/* Navbar */
+nav.navbar {
+  color: #A67B5B !important;
+  font-weight: 300;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding: 2rem 0 1rem 0;
+  align-items: flex-end;
+}
+
+nav{
+  color: #A67B5B !important;
+
+}
+
+nav.navbar.scrolled {
+  padding: 0.5rem 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+
+.navbar-nav {
+  gap: 1.5rem; /* Απόσταση ανάμεσα στις επιλογές */
+}
+
+nav a.nav-link {
+
+  font-family: 'Cormorant Garamond', serif;
+  color: #A67B5B !important;
+  font-weight: 600;
+  padding-top: 0.25rem;
+  padding-bottom: 0;
+}
+
+nav a.nav-link:hover {
+  color: #8B5E3C !important;
+}
+
+/* Πηγές στο History */
+
+ a {
+  color: #A67B5B; /* Ίδιο με το υπόλοιπο κείμενο */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+  a:hover {
+  color: #FFD966; /* Απαλό κίτρινο στο hover */
+}
+
+.footer-diagonal {
+  background-color: #A67B5B; /* ή όποιο brand χρώμα θες */
+  position: relative;
+  color: #fff;
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.footer-diagonal a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-diagonal a:hover {
+  text-decoration: underline;
+}
+
+.footer-diagonal .social-icons a {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+.footer-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Για να έχει padding πάνω-κάτω */
+.footer-diagonal .footer-inner {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+
+
+
+/* Scroll-to-top: ορατό focus */
+.scroll-top:focus-visible {
+  outline: 2px solid #A67B5B;
+  outline-offset: 3px;
+}
+
+
+/* Scroll to Top */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #A67B5B;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-top.show {
+  display: block;
+  opacity: 1;
+}
+
+/* ===== Home Page Custom Styles ===== */
+
+/* Τίτλος Αρχικής */
+.page-content h1 {
+  color: #A67B5B;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Κουμπί Αρχικής */
+ .btn-outline-secondary {
+  color: #A67B5B;
+  border-color: #A67B5B;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #A67B5B;
+  color: #fff;
+}
+
+/* Εικόνα Hero */
+.page-content img {
+  max-height: 400px;
+  object-fit: cover;
+  border: 1px solid #D2B48C;
+}
+
+/* ===== Bio Page Styles ===== */
+.page-content img {
+  border: 1px solid #D2B48C;
+}
+
+.page-content h1 {
+  color: #A67B5B;
+}
+
+.page-content .row.g-4 h4 {
+  font-weight: bold;
+}
+.navbar-nav .nav-link.active {
+  color: #8B5E3C !important;      /* Λίγο πιο σκούρο καφέ */
+}
+
+
+#mainNavbar {
+  transition: all 0.3s ease;
+  padding: 1.2rem 0;
+}
+
+#mainNavbar.shrink {
+  padding: 0.4rem 0;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Sliding underline */
+.navbar {
+  position: relative;
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #D2B48C;
+  transition: all 0.3s ease;
+  width: 0;
+  left: 0;
+}
+
+/* ===== History Photos Artistic Layout ===== */
+.history-photos {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-stack {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Περιορισμός πλάτους */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-stack .photo {
+  width: 100%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: relative;
+  margin: 1rem 0;
+  transition: transform 0.3s ease;
+  border-radius: 6px;
+}
+
+/* Εναλλασσόμενη περιστροφή */
+.photo.rotated-left {
+  transform: rotate(-3deg);
+}
+
+.photo.rotated-right {
+  transform: rotate(3deg);
+}
+
+/* Hover: Μεγαλώνει και ισιώνει */
+.photo-stack .photo:hover {
+  transform: scale(1.05) rotate(0deg);
+  z-index: 10;
+}
+
+/* Ελαφριά επικάλυψη */
+.photo-stack .photo:not(:first-child) {
+  margin-top: -40px; /* Καλύπτει λίγο την προηγούμενη */
+}
+
+/* ===== Home Hero Carousel ===== */
+.hero-slide {
+  min-height: 400px;
+}
+
+.hero-text h1 {
+  color: #A67B5B;
+  font-size: 2.5rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #8B5E3C;
+}
+
+.hero-text .btn-outline-secondary {
+  color: #A67B5B;
+  border-color: #A67B5B;
+  font-weight: 600;
+}
+
+.hero-text .btn-outline-secondary:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+.hero-image img {
+  object-fit: cover;
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Στυλ για τα bullets */
+.carousel-indicators [data-bs-target] {
+  background-color: #A67B5B;
+}
+
+.carousel-indicators .active {
+  background-color: #8B5E3C;
+}
+
+/* ===== Carousel Prev/Next Buttons with Rectangular Shadow ===== */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%; /* Εμβέλεια hover */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 80% 80%;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.7));
+}
+
+/* Hover effect με ορθογώνιο shadow */
+.carousel-control-prev::before,
+.carousel-control-next::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120%; /* Καλύπτει λίγο παραπάνω από το κουμπί */
+  background: rgba(0,0,0,0); /* default transparent */
+  transition: background 0.3s ease;
+  z-index: -1;
+}
+
+/* Τοποθέτηση ανά πλευρά */
+.carousel-control-prev::before {
+  left: 0;
+}
+.carousel-control-next::before {
+  right: 0;
+}
+
+/* Όταν κάνεις hover */
+.carousel-control-prev:hover::before,
+.carousel-control-next:hover::before {
+  background: linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0));
+}
+
+.carousel-control-next:hover::before {
+  background: linear-gradient(to left, rgba(0,0,0,0.15), rgba(0,0,0,0));
+}
+
+/* Feature Cards */
+.feature-card {
+  border: 1px solid #D2B48C;
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card i {
+  color: #A67B5B;
+}
+
+/* Parallax Banner */
+.parallax-section {
+  background-image: url('content/images/giannis.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-height: 500px;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+
+/* ===== Timeline Section ===== */
+.timeline-section h2 {
+  color: #A67B5B;
+}
+
+/* Base timeline */
+.timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 2rem 0;
+}
+
+/* Διακεκομμένη Γραμμή (Desktop) */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 80px; /* ευθυγραμμισμένη με τα bullets */
+  left: 0;
+  width: 100%;
+  border-top: 2px dashed #D2B48C;
+  z-index: 1;
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  flex: 1 1 150px;
+  max-width: 200px;
+  text-align: center;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  min-height: 140px;
+}
+
+.timeline-item:hover {
+  transform: scale(1.08);
+}
+
+/* Ημερομηνία */
+.timeline-date {
+  color: #A67B5B;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+}
+
+/* Bullets */
+.timeline-circle {
+  width: 16px;
+  height: 16px;
+  background-color: #A67B5B; /* Συμπαγές */
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+  z-index: 2;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-circle {
+  transform: scale(1.3);
+}
+
+/* Κείμενο */
+.timeline-item p {
+  color: #8B5E3C;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ===== Mobile Responsive Timeline ===== */
+@media (max-width: 767px) {
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40px; /* Χώρος για τη γραμμή */
+  }
+
+  /* Κάθετη γραμμή */
+  .timeline::before {
+    top: 0;
+    left: 15px;
+    width: 2px;
+    height: 100%;
+    border-top: none;
+    border-left: 2px dashed #D2B48C;
+  }
+
+  /* Timeline items full width */
+  .timeline-item {
+    max-width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-date {
+    margin-left: 10px;
+  }
+
+  /* Bullets στην κάθετη γραμμή */
+  .timeline-circle {
+    position: absolute;
+    left: -32px; /* Στη μέση της γραμμής */
+    top: 32px;
+    margin: 0;
+  }
+}
+
+/* Contact Form */
+.contact-form input,
+.contact-form textarea {
+  background-color: #fff;
+  border: 1px solid #D2B48C;
+  color: #8B5E3C;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9d7e66;
+}
+
+.contact-form .btn-outline-secondary {
+  color: #A67B5B;
+  border-color: #A67B5B;
+}
+
+.contact-form .btn-outline-secondary:hover {
+  background-color: #A67B5B;
+  color: #fff;
+}
+
+.gallery-img {
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.lb-nav a.lb-prev, .lb-nav a.lb-next {
+  opacity: 1 !important;
+  display: block !important;
+  z-index: 9999;
+}
+
+.main-button {
+  background-color: transparent;
+  color: #A67B5B;
+  border: 2px solid #A67B5B;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.main-button:hover {
+  background-color: #A67B5B;
+  color: white;
+  text-decoration: none;
+}
+
+.masonry-gallery {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+.masonry-gallery img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  display: block;
+  break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.masonry-gallery img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonry-gallery {
+    column-count: 1;
+  }
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: transparent;
+  color: #A67B5B;
+  border: 2px solid #A67B5B;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: none;
+  display: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.scroll-top:hover {
+  background-color: #A67B5B;
+  color: white;
+}
+
+.scroll-top.show {
+  display: block;
+  opacity: 1;
+}
